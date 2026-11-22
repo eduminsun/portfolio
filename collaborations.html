@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An interactive co-authorship network based on Minsun Cho's CV.">
+  <title>Research Collaboration Network | Minsun Cho</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top"><div class="shell bar"><a class="wordmark" href="index.html"><span class="mark">M</span><span>MINSUN CHO</span></a><nav class="tabs" aria-label="Portfolio pages"><a href="index.html">About Me</a><a href="research-projects.html">Research Projects</a><a href="publications.html" aria-current="page">Publications</a><a href="teaching.html">Teaching</a><a href="volunteer.html">Volunteer</a><a href="awards.html">Awards</a><a href="cv.html">CV</a><a href="me-time.html">Me Time</a><a href="contact.html">Contact</a></nav></div></header>
+  <main class="shell main">
+    <div class="eyebrow">Publications · Co-authorship</div>
+    <section class="hero"><div><h1>Research Collaboration Network</h1><p class="intro">A map of the co-authors named with me in my CV-listed publications and conference presentations.</p><a class="button secondary" href="publications.html">← Back to publications</a></div><div class="hero-art"><img src="assets/images/publications.svg" alt="Blue line illustration representing connected research work"></div></section>
+    <section>
+      <div class="network-toolbar" aria-label="Filter collaboration records">
+        <button class="filter-button" data-filter="all" aria-pressed="true">All listed work</button>
+        <button class="filter-button" data-filter="publication" aria-pressed="false">Articles &amp; proceedings</button>
+        <button class="filter-button" data-filter="conference" aria-pressed="false">Conference presentations</button>
+        <button class="filter-button" data-filter="review" aria-pressed="false">Under review</button>
+      </div>
+      <div class="network-layout">
+        <div class="network-frame">
+          <svg id="network" class="network-svg" viewBox="0 0 960 620" role="img" aria-labelledby="network-title network-description">
+            <title id="network-title">Minsun Cho's co-authorship network</title>
+            <desc id="network-description">An interactive graph. Select a collaborator to see co-authored works.</desc>
+            <g id="edges"></g><g id="nodes"></g>
+          </svg>
+          <div class="net-legend"><span><i class="legend-dot center"></i>Minsun Cho</span><span><i class="legend-dot"></i>Co-author</span><span><i class="legend-line"></i>Co-authored work; thicker line means more CV-listed items</span></div>
+        </div>
+        <aside class="network-detail" aria-live="polite"><div class="eyebrow">Selected researcher</div><h2 id="detail-name">Minsun Cho</h2><p id="detail-summary">Select a node to see how many listed outputs you share and which ones.</p><div class="network-count" id="detail-count"></div><ul id="detail-works"></ul><p class="network-status" id="network-status"></p></aside>
+      </div>
+      <details style="margin-top:18px"><summary style="cursor:pointer;color:var(--navy);font-size:12px">Browse collaborator names</summary><div id="collaborator-directory" class="tag-row"></div></details>
+      <p class="network-note">Each node represents an author named in the CV. A line joins authors listed on the same work; line thickness reflects the number of CV-listed outputs they share. The CV uses initials, so names are shown in that form. Conference versions and later publications are counted as separate listed outputs when both appear in the CV. The network includes published work, one manuscript under review, and conference presentations; the submitted ICCE paper is not included as a presentation.</p>
+    </section>
+  </main>
+  <footer class="shell footer"><span>© <span id="year"></span> Minsun Cho · Academic Portfolio</span><span><a href="publications.html">Publications</a> · <a href="contact.html">Contact</a></span></footer>
+  <script src="script.js"></script><script src="collaborations.js"></script>
+</body>
+</html>
